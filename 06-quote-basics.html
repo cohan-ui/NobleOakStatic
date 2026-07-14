@@ -399,6 +399,10 @@ h1.screen-h1{font-family:var(--font-serif);font-weight:400;font-size:30px;line-h
 .seg button.selected{background:rgba(255,255,255,.95);color:var(--ink);box-shadow:0 4px 12px rgba(51,63,72,.12)}
 .seg.compact button{font-size:11.5px;padding:10px 2px;white-space:nowrap;letter-spacing:-.01em}
 .occ-class{margin-top:8px;font-size:11.5px;color:var(--muted)}
+.info-btn{display:inline-flex;align-items:center;justify-content:center;width:17px;height:17px;margin-left:7px;vertical-align:-3px;border-radius:50%;border:1.5px solid rgba(51,63,72,.28);background:transparent;color:var(--muted);font-size:10.5px;font-weight:700;font-family:var(--font-ui);cursor:pointer;transition:all .2s var(--ease)}
+.info-btn:hover,.info-btn.open{border-color:var(--orange);color:var(--orange-press)}
+.info-note{display:none;margin:2px 0 12px;padding:11px 14px;border-radius:14px;background:rgba(51,63,72,.05);font-size:12px;line-height:1.6;color:var(--muted)}
+.info-note.show{display:block;animation:insightFlash .4s var(--ease)}
 .occ-class strong{font-weight:600;color:var(--ink)}
 .freq-row{margin:14px 0 14px}
 .seg button:focus{outline:none}
@@ -668,9 +672,10 @@ input[type=range]::-moz-range-thumb{
           <input type="range" min="18" max="70" step="1" value="38" data-basic-slider="age" style="--pct: 38.46153846153847%;">
           <div class="slider-minmax"><span>18</span><span>70</span></div>
         </div>
-        <div class="q-label">Gender/sex</div>
-        <div class="seg compact" data-basic-seg="genderSex">
-          <button class="" data-segval="female">Female</button><button class="selected" data-segval="male">Male</button><button class="" data-segval="other_or_prefer_not_to_say">Prefer not to say</button>
+        <div class="q-label">Gender/sex<button class="info-btn" id="gsInfoBtn" aria-label="About gender/sex and quoting" aria-expanded="false">i</button></div>
+        <div class="info-note" id="gsInfoNote">If you identify as gender-neutral or transgender, for the purposes of your quote your sex is defined as your sex at birth. If you wish to discuss this further, please contact us.</div>
+        <div class="seg" data-basic-seg="genderSex">
+          <button class="" data-segval="female">Female</button><button class="selected" data-segval="male">Male</button>
         </div>
         <div class="q-label">Do you smoke?</div>
         <div class="seg" data-basic-seg="smokingStatus">
