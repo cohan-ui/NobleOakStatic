@@ -227,7 +227,8 @@ h1.screen-h1{font-family:var(--font-serif);font-weight:700;font-size:24px;line-h
 
 /* Compact dock: on scroll the ask-cell shrinks to just the avatar and
    sits inline to the left of the primary CTA. */
-.dock.compact{flex-direction:row;align-items:center;gap:10px}
+.dock.compact{flex-direction:row;align-items:flex-start;gap:10px}
+.dock.compact .ask-cell{margin-top:0}
 .dock.compact .ask-cell{
   flex:none;width:54px;height:54px;padding:0;gap:0;cursor:pointer;
   align-items:center;justify-content:center;border-radius:50%;position:relative;
@@ -688,13 +689,7 @@ input[type=range]::-moz-range-thumb{
         <div class="eyebrow" style="color:var(--success)">Quote saved</div>
         <h1 class="screen-h1">All done, Alex.</h1>
         <p class="lede" style="margin-top:8px">Your indicative quote of <strong style="color:var(--ink)">$101/month</strong> for <strong style="color:var(--ink)">$800k</strong> cover is on its way to your inbox.</p>
-        <div class="card glass next-steps" style="margin-top:26px">
-          <div class="section-title" style="margin-bottom:6px">What happens next</div>
-          <div class="next-step"><div class="n-num">1</div><div class="n-text"><b>Check your email</b> - your quote summary and assumptions are included.</div></div>
-          <div class="next-step"><div class="n-num">2</div><div class="n-text"><b>No pressure follow-up</b> - an Australian-based specialist can walk through it if you’d like.</div></div>
-          <div class="next-step"><div class="n-num">3</div><div class="n-text"><b>Adjust anytime</b> - your answers are saved so you can revisit the check-in.</div></div>
-        </div>
-        <div style="text-align:left">
+        <div style="text-align:left;margin-top:22px">
   <div class="insight-card glass grain mini" data-coach-key="contact">
     <div class="ins-head">
       <svg class="trace" aria-hidden="true"><defs><linearGradient id="traceGrad" x1="1" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#FFE9A8"></stop><stop offset=".45" stop-color="#F3D365"></stop><stop offset="1" stop-color="#F47621"></stop></linearGradient></defs><rect class="glow-bloom" x="1.5" y="1.5" width="369" height="105" rx="20" style="--per: 913.7px;"></rect><rect class="glow-core" x="1.5" y="1.5" width="369" height="105" rx="20" style="--per: 913.7px;"></rect></svg>
@@ -705,6 +700,12 @@ input[type=range]::-moz-range-thumb{
     <p data-insight="">Whenever you’re ready, I can re-run the estimate with different assumptions - nothing here is final.</p>
     
   </div></div>
+        <div class="card glass next-steps" style="margin-top:16px">
+          <div class="section-title" style="margin-bottom:6px">What happens next</div>
+          <div class="next-step"><div class="n-num">1</div><div class="n-text"><b>Check your email</b> - your quote summary and assumptions are included.</div></div>
+          <div class="next-step"><div class="n-num">2</div><div class="n-text"><b>No pressure follow-up</b> - an Australian-based specialist can walk through it if you’d like.</div></div>
+          <div class="next-step"><div class="n-num">3</div><div class="n-text"><b>Adjust anytime</b> - your answers are saved so you can revisit the check-in.</div></div>
+        </div>
         <p class="disclaimer" style="text-align:center">This is general information, not personal financial advice.</p>
       </div></div></div>
 
@@ -717,7 +718,7 @@ input[type=range]::-moz-range-thumb{
     </div>
     <div id="ctaBar" style="display:flex;flex-direction:column;gap:8px">
       <button class="btn btn-orange" disabled="" style="opacity:.55" title="Full application - outside prototype scope">Continue application</button>
-      <button class="btn btn-ghost" id="restartBtn" style="margin-top:2px">Start a new check-in</button></div>
+      <button class="btn btn-ghost" id="restartBtn" style="margin-top:2px;font-weight:400;text-decoration:underline;text-underline-offset:3px">Start a new check-in</button></div>
   </div>
 
   <!-- Coach sheet -->

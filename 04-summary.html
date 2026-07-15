@@ -227,7 +227,8 @@ h1.screen-h1{font-family:var(--font-serif);font-weight:700;font-size:24px;line-h
 
 /* Compact dock: on scroll the ask-cell shrinks to just the avatar and
    sits inline to the left of the primary CTA. */
-.dock.compact{flex-direction:row;align-items:center;gap:10px}
+.dock.compact{flex-direction:row;align-items:flex-start;gap:10px}
+.dock.compact .ask-cell{margin-top:0}
 .dock.compact .ask-cell{
   flex:none;width:54px;height:54px;padding:0;gap:0;cursor:pointer;
   align-items:center;justify-content:center;border-radius:50%;position:relative;
