@@ -123,6 +123,8 @@ body{
   scrollbar-width:none;
 }
 .sheet-open .screen{overflow-y:hidden}
+.screen > *{animation:riseIn .5s var(--ease)}
+@keyframes riseIn{from{transform:translateY(10px)}to{transform:translateY(0)}}
 .screen::-webkit-scrollbar{display:none}
 .screen.enter-left{transform:translateX(-28px)}
 .screen.active{opacity:1;visibility:visible;transform:translateX(0);transition:opacity .38s var(--ease) .05s,transform .38s var(--ease) .05s,visibility 0s}
@@ -167,8 +169,8 @@ h1.screen-h1{font-family:var(--font-serif);font-weight:700;font-size:24px;line-h
 .trace .glow-core{stroke-width:1.8}
 @keyframes glowLap{
   0%{stroke-dashoffset:0;opacity:0}
-  12%{opacity:.95}
-  58%{opacity:.95}
+  12%{opacity:.55}
+  58%{opacity:.55}
   100%{stroke-dashoffset:calc(var(--per,1000px)*-.5);opacity:0}
 }
 .insight-card::after{ /* soft brand aura in the corner */
