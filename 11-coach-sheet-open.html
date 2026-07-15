@@ -143,8 +143,8 @@ h1.screen-h1{font-family:var(--font-serif);font-weight:700;font-size:24px;line-h
    · single-cell "Ask" bar docked at the bottom
    · expands into an anchored glass sheet (ask / voice)
 ================================================================ */
-.ai-mark{position:relative;z-index:2;animation:breath 4.2s ease-in-out infinite;display:block;filter:saturate(1.18) contrast(1.07) drop-shadow(0 1px 4px rgba(214,95,16,.25))}
-@keyframes breath{0%,100%{transform:translateY(0) scale(1)}50%{transform:translateY(-1.5px) scale(1.045)}}
+.ai-mark{position:relative;z-index:2;animation:breath 5.6s ease-in-out infinite;display:block;filter:saturate(1.18) contrast(1.07) drop-shadow(0 1px 4px rgba(214,95,16,.25))}
+@keyframes breath{0%,100%{transform:scale(1)}50%{transform:scale(1.015)}}
 @media (prefers-reduced-motion:reduce){
   .ai-mark,.aura,.ring-anim,.voice-orb,.voice-ring,.voice-wave i,.ctx-dot{animation:none!important}
 }
@@ -337,7 +337,7 @@ h1.screen-h1{font-family:var(--font-serif);font-weight:700;font-size:24px;line-h
   display:flex;align-items:center;justify-content:center;animation:orbBreath 2.2s ease-in-out infinite;
   filter:drop-shadow(0 16px 34px rgba(244,118,33,.34));
 }
-@keyframes orbBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.06)}}
+@keyframes orbBreath{0%,100%{transform:scale(1)}50%{transform:scale(1.02)}}
 .voice-wave{display:flex;gap:4px;align-items:center;justify-content:center;height:26px;margin-top:8px}
 .voice-wave i{width:3.5px;border-radius:99px;animation:wave 1s ease-in-out infinite}
 .voice-wave i:nth-child(odd){background:var(--orange)}
