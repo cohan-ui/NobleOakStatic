@@ -31,6 +31,7 @@
   --font-ui:'Gotham','Montserrat',sans-serif;
   --font-serif:'Gotham','Montserrat',sans-serif; /* display slot: renders Light via weight 400 */
   --ease:cubic-bezier(.22,.61,.36,1);
+  --ease-smooth:cubic-bezier(.4,0,.2,1);
   --glass-bg:rgba(255,255,255,.62);
   --glass-border:rgba(255,255,255,.80);
   --glass-shadow:0 10px 36px rgba(51,63,72,.09), inset 0 1px 0 rgba(255,255,255,.85);
@@ -220,7 +221,7 @@ h1.screen-h1{font-family:var(--font-serif);font-weight:700;font-size:24px;line-h
   border:1px solid rgba(255,255,255,.9);
   box-shadow:0 12px 34px rgba(51,63,72,.13), inset 0 1px 0 rgba(255,255,255,.95),
              0 0 0 1px rgba(244,118,33,.10);
-  transition:all .25s var(--ease);
+  transition:width .34s var(--ease-smooth),padding .34s var(--ease-smooth),border-radius .34s var(--ease-smooth),background .25s var(--ease-smooth),box-shadow .25s var(--ease-smooth);
 }
 .ask-cell:active{transform:scale(.985)}
 
@@ -228,15 +229,20 @@ h1.screen-h1{font-family:var(--font-serif);font-weight:700;font-size:24px;line-h
    sits inline to the left of the primary CTA. */
 .dock.compact{flex-direction:row;align-items:center;gap:10px}
 .dock.compact .ask-cell{
-  flex:none;width:54px;height:54px;padding:0;gap:0;cursor:pointer;justify-content:center;
+  flex:none;width:54px;height:54px;padding:0;gap:0;cursor:pointer;
+  align-items:center;justify-content:center;border-radius:50%;position:relative;
 }
-.dock.compact .ask-orb{width:38px;height:38px}
+.dock.compact .ask-orb{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%)}
+.dock.compact .ask-orb{width:44px;height:44px}
+.ask-orb{transition:width .34s var(--ease-smooth),height .34s var(--ease-smooth)}
+.dock.compact .ask-orb #askOrbMark{position:absolute;top:50%;left:50%;transform:translate(-50%,-50%);display:flex;align-items:center;justify-content:center}
+.dock.compact .ask-orb #askOrbMark img.ai-mark{display:block}
 .dock.compact .ask-ph,
 .dock.compact .ask-mic{
   width:0;opacity:0;margin:0;overflow:hidden;pointer-events:none;
 }
 .dock.compact #ctaBar{flex:1;min-width:0}
-.ask-ph,.ask-mic{transition:opacity .2s var(--ease),width .28s var(--ease)}
+.ask-ph,.ask-mic{transition:opacity .22s var(--ease-smooth),width .34s var(--ease-smooth)}
 .ask-orb{
   position:relative;flex:none;width:34px;height:34px;border-radius:50%;
   display:flex;align-items:center;justify-content:center;
